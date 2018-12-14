@@ -1,0 +1,37 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+# config/routes.yaml
+
+# the "app_lucky_number" route name is not important yet
+app_lucky_number:
+    path: /lucky/number
+    controller: App\Controller\LuckyController::number
+
+# config/routes.yaml
+blog_list:
+    path:      /blog/{page<\d+>?1}
+    controller: App\Controller\BlogController::list
+
+blog_show:
+    path:     /blog/{slug}
+    controller: App\Controller\BlogController::show
+
+# config/routes.yaml
+about_us:
+    path:
+        fr: /retrouvez-nous
+        en: /about-us
+    controller: App\Controller\CompanyController::about
+
+# config/routes.yaml
+article_show:
+  path:     /articles/{_locale}/{year}/{slug}.{_format}
+  controller: App\Controller\ArticleController::show
+  defaults:
+      _format: html
+  requirements:
+      _locale:  en|fr
+      _format:  html|rss
+      year:     \d+

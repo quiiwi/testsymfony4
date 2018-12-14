@@ -1,0 +1,7 @@
+# config/routes/annotations.yaml
+controllers:
+    resource: '../../src/Controller/'
+    type: annotation
+    prefix:
+        en: '' # don't prefix URLs for English, the default locale
+        fr: '/fr'
